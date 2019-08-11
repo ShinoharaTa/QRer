@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- お決まり文句 -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- SEO -->
+    <title>TIP SENSU Link Generator | Twitterで投げ銭しよう</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="投げ銭Bot Sensuを使用して、Twitterで投げ銭を行います。リンク対応、寄付募集リンク等にもご利用可能！">
+    <meta name="author" content="Shino_JK">
+    <!-- <link rel="canonical" href=""> -->
+
+    <!-- OGP -->
+    <meta property="og:site_name" content="TIP SENSU with Twitter">
+    <meta property="og:title" content="TIP SENSU Link Generator | Twitterで投げ銭しよう">
+    <meta property="og:description" content="投げ銭Bot Sensuを使用して、Twitterで投げ銭を行います。リンク対応、寄付募集リンク等にもご利用可能！">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/ShinoharaTa/TipSensuWithTwitter/tiplink_gen.html">
+    <meta property="og:image" content="https://shinoharata.github.io/TipSensuWithTwitter/img/sensu_og.png">
+    <!-- <meta property="fb:app_id" content="App-ID（15文字の半角数字）" /> -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@SHINOHARATTT">
+    <meta name="twitter:title" content="TIP SENSU Link Generator | Twitterで投げ銭しよう" />
+    <meta name="twitter:description" content="投げ銭Bot Sensuを使用して、Twitterで投げ銭を行います。リンク対応、寄付募集リンク等にもご利用可能！" />
+    <meta name="twitter:image" content="https://shinoharata.github.io/TipSensuWithTwitter/img/sensu_og.png">
+
+    <!-- favicon編 -->
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/index.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- font awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="bg-theme text-white p-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1 col-sm-12 col-lg-2 col-xl-3"></div>
+                <div class="col-md-10 col-sm-12 col-lg-8 col-xl-6">
+                    <h4 class="">QRer</h4>
+                </div>
+                <div class="col-md-1 col-sm-12 col-lg-2 col-xl-3"></div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1 col-sm-12 col-lg-2 col-xl-3"></div>
+            <div id="formdata" class="col-md-10 col-sm-12 col-lg-8 col-xl-6">
+                <div class="pt-3 text-center">
+                    <h1>
+                    </h1>
+                    <div class="" id="generatedQR">
+                    </div>
+                    <div class="" v-if="notset">
+                        <img src="notimage.png" alt="">
+                    </div>
+                </div>
+                <div class="pt-3 form-row">
+                    <div class="col-12">
+                        <input type="text" class="form-control" v-model="setText" placeholder="ここにテキストを入力">
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <button type="button" class="btn btn-info btn-block" @click="clearNotImage" id="setText">Generate QR Code.</button>
+                </div>
+            </div>
+            <div class="col-md-1 col-sm-12 col-lg-2 col-xl-3"></div>
+        </div>
+    </div>
+    <div class="container text-center pt-5">
+        <h6>Copyright &copy; 2019
+            <a href="https://twitter.com/shinoharattt">Shino3</a>
+        </h6>
+    </div>
+    <script src="./js/jquery.qrcode.js"></script>
+    <script src="./js/qrcode.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+{
+    "name": "Qualer",
+    "short_name": "QRer",
+    "theme_color": "#689caf",
+    "background_color": "#46606a",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/"
+}
