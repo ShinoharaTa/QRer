@@ -2,7 +2,7 @@ var tipData = new Vue({
     el: '#formdata',
     computed: {
         text: function() {
-            return this.setText;
+            return encodeURI(this.setText);
         },
     },
     data: {
